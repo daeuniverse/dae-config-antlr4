@@ -11,7 +11,7 @@ fragment SINGLE_QUOTE_STRING : '\'' ( '\\\'' | . )*? '\'' ; // match 'foo', '\''
 // Tokens
 WHITESPACE : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 COMMENT_BLOCK : '/*' .*? '*/' -> skip ;
-COMMENT_LINE_SHARP : {getCharPositionInLine() == 0}? [ \t]* '#' .*? ( [\r\n]+ | EOF ) -> skip ;
+COMMENT_LINE_SHARP : '#' .*? ( [\r\n]+ | EOF ) -> skip ;
 
 ID : SAFE_ID_HEAD_CHAR SAFE_CHAR* ;
 NON_ID : SAFE_NONID_HEAD_CHAR SAFE_CHAR* ;
