@@ -3,7 +3,7 @@ name: release
 on:
   release:
     types:
-      - pre-release # a release or draft of a release is published, or a pre-release is changed to a release
+      - prereleased
 
 jobs:
   build:
