@@ -38,11 +38,6 @@ expression
     : ID '{' routingRuleOrDeclarationOrLiteralOrExpressionList '}'
     ;
 
-optListBlock
-    : '{' routingRuleOrDeclarationOrLiteralOrExpressionList '}'
-    | // empty
-    ;
-
 declaration
     : ID ':' functionPrototypeExpression
     | ID ':' literal
@@ -82,18 +77,15 @@ optFunctionPrototypeExpressionAnd
 
 functionPrototypeExpression
     : functionPrototype
-    | functionPrototypeExpression '&&' functionPrototypeExpression
+    | functionPrototype '&&' functionPrototypeExpression
     ;
 
 routingRuleOrDeclarationOrLiteralOrExpressionList
-    : routingRule
-    | declaration
-    | literal
-    | expression
-    | routingRule routingRuleOrDeclarationOrLiteralOrExpressionList
+    : routingRule routingRuleOrDeclarationOrLiteralOrExpressionList
     | declaration routingRuleOrDeclarationOrLiteralOrExpressionList
     | literal routingRuleOrDeclarationOrLiteralOrExpressionList
     | expression routingRuleOrDeclarationOrLiteralOrExpressionList
+    | // empty
     ;
 
 routingRuleList
