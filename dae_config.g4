@@ -63,17 +63,9 @@ parameter
     ;
 
 routingRule
-    : routingRuleLeft '->' bare_literal
+    : functionPrototypeExpression '->' bare_literal
     ;
 
-routingRuleLeft
-    : optFunctionPrototypeExpressionAnd functionPrototypeExpression
-    ;
-
-optFunctionPrototypeExpressionAnd
-    : functionPrototypeExpression '&&'
-    | // empty
-    ;
 
 functionPrototypeExpression
     : functionPrototype
