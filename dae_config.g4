@@ -20,9 +20,23 @@ QUOTE_STRING : DOUBLE_QUOTE_STRING | SINGLE_QUOTE_STRING ;
 // Rules
 start : input EOF;
 
-bare_literal : ID | NON_ID ;
-quote_literal :  QUOTE_STRING;
-literal : quote_literal | bare_literal ;
+bare_literal
+    : ID | NON_ID
+    ;
+
+quote_literal
+    :  QUOTE_STRING
+    ;
+
+literal
+    : quote_literal
+    | bare_literal
+    ;
+
+literalExpression
+    : literal ',' literalExpression
+    | literal
+    ;
 
 input
     : programStructureBlcok
@@ -40,7 +54,7 @@ expression
 
 declaration
     : ID ':' functionPrototypeExpression
-    | ID ':' literal
+    | ID ':' literalExpression
     ;
 
 functionPrototype
