@@ -77,9 +77,13 @@ parameter
     ;
 
 routingRule
-    : functionPrototypeExpression '->' bare_literal
+    : functionPrototypeExpression '->' outboundExpr
     ;
 
+outboundExpr
+    : bare_literal
+    | functionPrototype
+    ;
 
 functionPrototypeExpression
     : functionPrototype
