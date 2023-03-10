@@ -15,7 +15,7 @@ go: g4
 	cd build && \
 		antlr4 -Dlanguage=Go -o go/dae_config/ -package "dae_config" dae_config.g4 && \
 		cd go/dae_config/ && \
-		go mod init github.com/v2rayA/dae-config-dist/go/dae_config && \
+		go mod init github.com/daeuniverse/dae-config-dist/go/dae_config && \
 		go mod tidy
 
 cpp: g4
@@ -24,4 +24,4 @@ cpp: g4
 
 readme: dir
 	cd build && \
-		echo "Dist of [dae-config-antlr4](https://github.com/v2rayA/dae-config-antlr4)" > README.md
+		echo "Dist of [dae-config-antlr4](https://github.com/daeuniverse/dae-config-antlr4)" > README.md
