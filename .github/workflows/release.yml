@@ -34,7 +34,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v')
         uses: crazy-max/ghaction-github-pages@v2.5.0
         with:
-          repo: v2rayA/dae-config-dist
+          repo: daeuniverse/dae-config-dist
           target_branch: main
           build_dir: build
         env:
