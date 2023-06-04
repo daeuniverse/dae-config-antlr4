@@ -16,7 +16,7 @@ go: g4
 		antlr4 -Dlanguage=Go -o go/dae_config/ -package "dae_config" dae_config.g4 && \
 		cd go/dae_config/ && \
 		go mod init github.com/daeuniverse/dae-config-dist/go/dae_config && \
-		sed -i 's#github.com/antlr/antlr4/runtime/Go/antlr/v4#github.com/antlr4-go/antlr/v4#g' *.go && \
+		echo 'require github.com/antlr/antlr4/runtime/Go/antlr/v4 v4.0.0-20230305170008-8188dc5388df' >> go.mod && \
 		go mod tidy
 
 cpp: g4
