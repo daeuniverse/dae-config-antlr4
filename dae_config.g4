@@ -53,8 +53,13 @@ expression
     ;
 
 declaration
-    : ID ':' functionPrototypeExpression
-    | ID ':' literalExpression
+    : ID ':' functionPrototypeExpression optAnnotation
+    | ID ':' literalExpression optAnnotation
+    ;
+
+optAnnotation
+    : '[' optParameterList ']'
+    | // empty
     ;
 
 functionPrototype
